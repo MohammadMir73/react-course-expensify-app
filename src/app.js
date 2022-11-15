@@ -15,13 +15,10 @@ import AppRouter from './Routers/AppRouters';
 
 const store = configureStore();
 
-const expenseOne = store.dispatch(addExpense({ description: 'Water bill', amount: 4500, createdAt: 0 }));
-const expenseTwo = store.dispatch(addExpense({ description: 'Gas bill', amount: 2000, createdAt: 2 }));
-const expenseThree = store.dispatch(addExpense({ description: 'Rent', amount: 8000, createdAt: 1 }));
 
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
+// const state = store.getState();
+// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+
 
 //----
 
