@@ -15,6 +15,7 @@ import AppRouter from './Routers/AppRouters';
 
 const store = configureStore();
 
+console.log('test');
 
 // const state = store.getState();
 // const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
