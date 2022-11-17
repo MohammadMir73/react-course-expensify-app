@@ -6,10 +6,9 @@ module.exports = merge(common, {
     devtool: 'inline-source-map',
     devServer: {
         static: {
-            directory: path.join(__dirname, 'public'),
-            staticOptions: {},
+            directory: path.join(__dirname, 'public')
         },
-        historyApiFallback: true
+        historyApiFallback: true,
     },
     mode: 'development'
 });
