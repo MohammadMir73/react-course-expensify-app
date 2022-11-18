@@ -1,6 +1,7 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import expensesReducer from '../reducers/expenses';
 import filtersReduser from '../reducers/filters';
+import isAuthReduser from '../reducers/isAuth';
 
 
 //Store Configuration
@@ -13,7 +14,8 @@ export default () => {
     const store = configureStore({
         reducer: {
             expenses: expensesReducer,
-            filters: filtersReduser
+            filters: filtersReduser,
+            isAuth:  isAuthReduser
         },
         middleware: getDefaultMiddleware =>
         getDefaultMiddleware({

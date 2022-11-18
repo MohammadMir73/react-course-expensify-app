@@ -13,7 +13,7 @@ const AddExpensePage = (props) => {
             fun = 'Add'
             onSubmit={(expense) => {
                 props.addExpense(expense);
-                navigate('/');
+                navigate('/dashboard');
             }}
         />
     </div>

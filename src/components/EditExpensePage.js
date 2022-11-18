@@ -16,12 +16,12 @@ const EditExpensePage = (props) => {
                 expense={expenseToEdit}
                 onSubmit={(expense) => {
                     props.editExpense(id, expense);
-                    navigate('/');
+                    navigate('/dashboard');
                 }}
             />
             <button onClick={() => {
                 props.removeExpense(id)
-                navigate('/');
+                navigate('/dashboard');
             }}>Remove</button>
         </div>
     );
