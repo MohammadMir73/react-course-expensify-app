@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
 import { addExpense } from './actions/expenses';
-import getVisibleExpenses from './selectors/expenses'
+import moment from 'moment';
 // Style Imports
 import 'normalize.css/normalize.css'
 import './styles/styles.scss';
@@ -15,11 +15,10 @@ import AppRouter from './Routers/AppRouters';
 
 const store = configureStore();
 
-console.log('test');
-
-// const state = store.getState();
-// const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
+store.dispatch(addExpense({description: "Gas", amount: 1000, createdAt: moment().subtract(2, 'day')}));
+store.dispatch(addExpense({description: "Rent", amount: 20000, createdAt: moment().startOf('month')}));
+store.dispatch(addExpense({description: "Milk", amount: 220, createdAt: moment().startOf('day')}));
+store.dispatch(addExpense({description: "Loan", amount: 33000, createdAt: moment().endOf('month')}))
 
 //----
 

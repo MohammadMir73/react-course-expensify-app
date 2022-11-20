@@ -8,14 +8,20 @@ const AddExpensePage = (props) => {
     const navigate = useNavigate();
     return (
     <div>
-        <h1>Add Expense</h1>
-        <ExpnseForm
-            fun = 'Add'
-            onSubmit={(expense) => {
-                props.addExpense(expense);
-                navigate('/dashboard');
-            }}
-        />
+        <div className='page-header'>
+            <div className='content-container'>
+                <h1>Add Expense</h1>
+            </div>
+        </div>
+        <div className='content-container'>
+            <ExpnseForm
+                fun = 'Add'
+                onSubmit={(expense) => {
+                    props.addExpense(expense);
+                    navigate('/dashboard');
+                }}
+            />
+        </div>
     </div>
 )};
 //----

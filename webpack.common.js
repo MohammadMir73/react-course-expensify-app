@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: ["regenerator-runtime/runtime.js", "./src/app.js"],
+    entry: ["babel-polyfill","regenerator-runtime/runtime.js", "./src/app.js"],
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'

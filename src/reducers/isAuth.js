@@ -1,4 +1,4 @@
-const isAuthReducerdefaultState = 0;
+const isAuthReducerdefaultState = 1;
 
 export default (state = isAuthReducerdefaultState, action) => {
     switch (action.type) {

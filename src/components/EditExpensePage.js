@@ -11,18 +11,27 @@ const EditExpensePage = (props) => {
     const expenseToEdit = props.expenses.find((expense) => expense.id === id )
     return (
         <div>
-            <ExpnseForm
-                fun = 'Edit'
-                expense={expenseToEdit}
-                onSubmit={(expense) => {
-                    props.editExpense(id, expense);
+            <div className='page-header'>
+                <div className='content-container'>
+                    <h1 className='page-header__title'>
+                        Edit <span>{expenseToEdit.description}</span> Expense
+                    </h1>
+                </div>
+            </div>
+            <div className='content-container'>
+                <ExpnseForm
+                    fun = 'Edit'
+                    expense={expenseToEdit}
+                    onSubmit={(expense) => {
+                        props.editExpense(id, expense);
+                        navigate('/dashboard');
+                    }}
+                />
+                <button className='button button--secondary' onClick={() => {
+                    props.removeExpense(id)
                     navigate('/dashboard');
-                }}
-            />
-            <button onClick={() => {
-                props.removeExpense(id)
-                navigate('/dashboard');
-            }}>Remove</button>
+                }}>Remove</button>
+            </div>
         </div>
     );
 };

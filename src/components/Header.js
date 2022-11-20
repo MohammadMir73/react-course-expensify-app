@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { connect } from "react-redux";
 import { logOut } from "../actions/isAuth"
@@ -7,29 +7,19 @@ import { logOut } from "../actions/isAuth"
 const Header = (props) => {
     const navigate = useNavigate();
     return (
-        <header>
-            <h1>
-                Expensify
-            </h1>
-            <NavLink 
-                to='/dashboard'  
-                className={({ isActive }) => (isActive ? 'active' : '')}>
-                Dashboard
-            </NavLink>
-            <NavLink
-                to='/create'
-                className={({ isActive }) => (isActive ? 'active' : '')}>
-                Create Expense
-            </NavLink>
-            <NavLink 
-                to='/help' 
-                className={({ isActive }) => (isActive ? 'active' : '')}>
-                Help
-            </NavLink>
-            <button onClick={() => {
-                navigate('/');
-                props.logOut();
-            }}>Logout</button>
+        <header className='header'>
+            <div className='content-container'>
+                <div className='header__content'>
+                    <Link className='header__title' to='/dashboard'  >
+                        <h1>Expensify</h1>
+                    </Link>
+                    
+                    <button className='button button--link' onClick={() => {
+                        navigate('/');
+                        props.logOut(); 
+                    }}>Logout</button>
+                </div>
+            </div>
         </header>
     );
 }
@@ -40,3 +30,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(undefined ,mapDispatchToProps)(Header);
+
