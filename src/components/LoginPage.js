@@ -5,6 +5,11 @@ import { logIn } from "../actions/isAuth"
 
 const LoginPage = (props) => {
     const navigate = useNavigate();
+    window.addEventListener('load',() => {
+        if(props.isAuth){
+            navigate('/dashboard');
+        }
+    });
     return (
         <div className="box-layout">
             <div className="box-layout__box">
